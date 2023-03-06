@@ -19,3 +19,11 @@ If you're going to be doing ny moderately intensive NLP work, you should probabl
 R has some tools for NLP work, but they're usually not as feature-rich and have a few odd quirks.  Julia is in a similar position--there aren't a lot of very mature NLP libraries right now, but Julia makes it _much_ easier than Python or R to re-implement something yourself and not worry about the performance (because Julia is very fast).  I like Julia a lot for this reason; most of the stuff we do in NLP isn't particularly weird or esoteric, and the lack of pre-built tools means you have to build more yourself, and see how simple most of it really is.
 
 But, to try to encourage you to use Python, the Python notebooks will contain more details about the more general "what" and "why" of a given approach, and you should go to them first if you need some conceptual grounding.  The R and Julia notebooks will be much more "just the code."
+
+# Licensing
+
+The dataset used for these demos (the Multilingual Amazon Reviews Corpus) is made accessible by Amazon under their own license ([https://docs.opendata.aws/amazon-reviews-ml/license.txt](https://docs.opendata.aws/amazon-reviews-ml/license.txt)).  
+
+All code in these demos is licensed under an [MIT license](https://mit-license.org/).
+
+All text and non-code artifacts are licensed under a Creative Commons Attribution license ([https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)).  The dataset used (
