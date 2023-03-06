@@ -1,0 +1,11 @@
+# Python Demos
+
+There are demos for a few common workflows in Python in this folder.  Each one has a Jupyter Notebook that contains more thorough explanation of what's going on, and a `.py` file with just the functional part of the code (rewritten a bit compared to the code in the notebooks).  The files are:
+
+- `01a Bag of Words with scikit-learn`: shows how to use tools from the `scikit-learn` library to do a minimal, but surprisingly functional, bag-of-words predcitive model.  This is a fast way to build quick-and-dirty predictive models on text data, but you don't get a lot of control over the process compared to other methods.
+- `01b Bag of Words with Gensim + scikit-learn`: shows how to use tools from the `gensim` library to get more control over the text processing steps, without sacrificing too much in the way of speed.  This isn't really what `gensim`'s main use case/selling point is--it's mostly a library for building word embeddings, topic models, and other common unsupervised/self-supervised/semi-supervised tasks.
+- `01c Bag of Words with spaCy + scikit-learn`: shows how to use models from the `spacy` library to do text preprocessing.  This is a great use for `spacy`; it's slower, but it gives you a much richer set of tools for working with language data than the other two bag of words approaches.
+- `02 Word vectors`: shows how to use word embeddings (fixed-length, dense vectors) to build predictive models with text.  There's an example of how to use someone else's pre-trained vectors, and how to train your own word vector model and use it.
+- `03 Fine-tuning transformers`: the one you're all here for.  This shows how to fine-tune one of the big, fancy transformer-based language models like BERT.  Most of this is ripped from the Huggingface docs with slight modifications and added commentary, and it only shows one way to do the fine-tuning (namely: using native PyTorch).
+
+I strongly recommend running these notebooks in a `conda` virtual environment.  The `env.yaml` file can be used to re-create the environment I ran these notebooks in; it will download and install all required dependencies.  Each notebook also contains a cell with the required conda/pip installation commands to get all the required dependencies.
