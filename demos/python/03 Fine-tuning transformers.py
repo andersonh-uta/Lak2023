@@ -12,10 +12,9 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 
 class TextDataset(Dataset):
-    def __init__(self, x, y, tokenizer):
+    def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.tokenizer = tokenizer
         
     def __len__(self):
         return self.x.shape[0]
@@ -47,9 +46,9 @@ def tokenize(texts, tokenizer):
         return_tensors="pt",
     )
 
-def make_dataset(df, tokenizer, batch_size=8):
+def make_dataset(df, batch_size=8):
     return DataLoader(
-        TextDataset(df["review_body"], df["stars"], tokenizer),
+        TextDataset(df["review_body"], df["stars"]),
         batch_size=batch_size,
         shuffle=True,
     )
@@ -163,9 +162,9 @@ if __name__ == "__main__":
     test = pd.read_csv("../../data/test.csv")
     val = pd.read_csv("../../data/validation.csv")
     
-    train_dataset = make_dataset(train, tokenizer, batch_size=8)
-    test_dataset = make_dataset(test, tokenizer, batch_size=32)
-    val_dataset = make_dataset(val, tokenizer, batch_size=32)
+    train_dataset = make_dataset(train, batch_size=8)
+    test_dataset = make_dataset(test, batch_size=32)
+    val_dataset = make_dataset(val, batch_size=32)
 
     # the Transformer models will expect our labels to be numeric
     # indices starting from 0; just subtract 1 from our stars and
